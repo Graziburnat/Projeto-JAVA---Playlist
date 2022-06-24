@@ -1,6 +1,8 @@
 package models;
 
-public class Artista {
+import models.contracts.IArtista;
+
+public class Artista implements IArtista{
 
     private String artista;
     private String genero;

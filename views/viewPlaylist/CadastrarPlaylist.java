@@ -1,19 +1,20 @@
 package views.viewPlaylist;
 
 import models.Playlist;
+import models.ItemPlay;
 import models.Login;
 import models.Versao;
 import controllers.PlaylistController;
 import controllers.VersaoController;
 import controllers.LoginController;
-// import controllers.VersaoController;
 import utils.Console;
 
 public class CadastrarPlaylist {
 
     public void cadastrar() {
 
-        Playlist playlist = new Playlist();     
+        Playlist playlist = new Playlist();
+        ItemPlay mp = new ItemPlay();
         VersaoController versaoController = new VersaoController();
         PlaylistController playlistController = new PlaylistController();
         LoginController loginController = new LoginController();
@@ -23,52 +24,30 @@ public class CadastrarPlaylist {
         playlist.setNome(Console.readString("Digite o nome da playlist: "));
 
         String criador = Console.readString("Informe o nome do usuário: ");
-        Login usuario = loginController.listar(criador);
-
-
-        if(usuario != null){
+        Login usuario = loginController.buscar(criador);
+        if (usuario != null) {
             playlist.setLogin(usuario);
+
+            do {
+
+                mp = new ItemPlay();
+                String nomeVersao = Console.readString("Digite a música que deseja adicionar: ");
+                Versao versao = versaoController.buscar(nomeVersao);
+                if (versao != null) {
+                    mp.setVersao(versao);
+                    playlist.getVersoes().add(mp);
+                } else {
+                    System.out.println("Música não encontrada");
+                }
+
+            } while (Console.readString("Deseja adicionar mais Músicas? Digite S ou N").toUpperCase().equals("S"));
+
             playlistController.cadastrar(playlist);
+            System.out.println("Música cadastrada!");
 
-            
-            int contador = 0;
-
-            do { 
-                System.out.println("-- CADASTRO PLAYLIST -- \n\n");
-                System.out.println("1 - Adicionar mais uma música");
-                System.out.println("0 - Finalizar playlist");
-                contador= Console.readInt("Digite a opção: ");
-
-                switch (contador) {
-
-                    case 1: 
-                        String nomeMusica= Console.readString("Digite a Música: ");
-                        Versao versao = VersaoController.buscarPorNome(nomeMusica);
-                        
-                        if(versao != null){
-                                playlist.setItemMusica(versao);
-                                System.out.println("Musica adicionada.");
-                                }
-                            playlistController.cadastrar(playlist);
-                        break;
-
-                    case 0:
-                            System.out.println("\n SAIR \n");
-                            break;
-
-                    default:
-                        System.out.println("\n -- -- \n");
-                        break;
-                
-                            
-            } 
-
-            }while (contador != 0);
-
-        
-        }else{
+        } else {
             System.out.println("Usuário não encontrado!");
         }
-    
+
     }
 }

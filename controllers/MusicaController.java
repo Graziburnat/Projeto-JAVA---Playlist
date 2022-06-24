@@ -1,8 +1,10 @@
 package controllers;
 import java.util.ArrayList;
+
+import controllers.contracts.IMusicaController;
 import models.Musica;
 
-public class MusicaController {
+public class MusicaController implements IMusicaController{
 
     private static ArrayList<Musica> musicas = new ArrayList<Musica>();
 

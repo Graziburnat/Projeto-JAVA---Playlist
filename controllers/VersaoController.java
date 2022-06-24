@@ -1,13 +1,15 @@
 package controllers;
 import java.util.ArrayList;
+
+import controllers.contracts.IVersaoController;
 import models.Versao;
 
-public class VersaoController {
+public class VersaoController implements IVersaoController{
 
     private static ArrayList<Versao> versoes = new ArrayList<Versao>();
 
     public boolean cadastrar(Versao versao){
-        if(buscarPorNome(versao.getNome())==null){
+        if(buscar(versao.getNome())==null){
             versoes.add(versao);
             return true;
         }
@@ -17,7 +19,7 @@ public class VersaoController {
         return versoes;
     }
 
-    public static Versao buscarPorNome(String nome){
+    public Versao buscar(String nome){
         for (Versao versaoCadastrada : versoes) {
             if(versaoCadastrada.getNome().equals(nome)){
                 return versaoCadastrada;

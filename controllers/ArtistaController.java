@@ -1,8 +1,10 @@
 package controllers;
 import java.util.ArrayList;
+
+import controllers.contracts.IArtistaController;
 import models.Artista;
 
-public class ArtistaController {
+public class ArtistaController implements IArtistaController{
     private static ArrayList<Artista> artistas = new ArrayList<Artista>();
 
     public void cadastrar(Artista artista){

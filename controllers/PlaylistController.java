@@ -1,8 +1,10 @@
 package controllers;
 import java.util.ArrayList;
+
+import controllers.contracts.IPlaylistController;
 import models.Playlist;
 
-public class PlaylistController {
+public class PlaylistController implements IPlaylistController{
 
     private static ArrayList<Playlist> playlists = new ArrayList<Playlist>();
 

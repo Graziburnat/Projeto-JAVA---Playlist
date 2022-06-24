@@ -1,9 +1,9 @@
 package models;
+import models.contracts.IMusica;
 
-public class Musica {
+public class Musica implements IMusica{
     
     private String nome;
-    private double duracao;
     private String compositor;
     
     public String getNome() {
@@ -12,12 +12,6 @@ public class Musica {
     public void setNome(String nome) {
 
         this.nome = nome;
-    }
-    public double getDuracao() {
-        return duracao;
-    }
-    public void setDuracao(double duracao) {
-        this.duracao = duracao;
     }
     public String getCompositor() {
         return compositor;
@@ -29,7 +23,7 @@ public class Musica {
     @Override
     public String toString() {
         return 
-            " | Música: " + nome + " | Duração: " + duracao + " | Compositor: " + compositor;
+            " | Música: " + nome + " | Compositor: " + compositor;
     }
     
 }
