@@ -4,15 +4,19 @@ import utils.Console;
 import views.viewArtista.CadastrarArtista;
 import views.viewArtista.ListarArtista;
 import views.viewArtista.RemoverArtista;
+import views.viewAudioBooks.CadastrarAudioBooks;
+import views.viewAudioBooks.ExcluirAudioBooks;
+import views.viewAudioBooks.ListarAudioBooks;
 import views.viewLogin.CriarLogin;
 import views.viewMusicas.CadastrarMusica;
 import views.viewMusicas.ListarMusicas;
 import views.viewMusicas.RemoverMusica;
-import views.viewPA.ListarAudioBooks;
-import views.viewPA.ListarPodcasts;
 import views.viewPlaylist.CadastrarPlaylist;
 import views.viewPlaylist.ExcluirPlaylist;
 import views.viewPlaylist.ListarPlaylist;
+import views.viewPodcasts.CadastrarPodcasts;
+import views.viewPodcasts.ExcluirPodcasts;
+import views.viewPodcasts.ListarPodcasts;
 
 public class Principal {
     public static void main(String[] args) {
@@ -29,43 +33,70 @@ public class Principal {
                 case 1:
                     do {
                         System.out.println("\n -- ADMIN LOGIN -- \n");
-                        System.out.println("1 - Cadastrar música");
-                        System.out.println("2 - Listar música");
-                        System.out.println("3 - Remover música");
-                        System.out.println("4 - Cadastrar artista");
-                        System.out.println("5 - Listar artista");
-                        System.out.println("6 - Remover artista");
-                        System.out.println("7 - Cadastrar Canções À biblioteca de música");
-                        System.out.println("8 - Exibir Biblioteca");
-                        System.out.println("9 - Editar Biblioteca");
+                        System.out.println("1 - Cadastrar artista");
+                        System.out.println("2 - Listar artista");
+                        System.out.println("3 - Remover artista");
+                        System.out.println("4 - Cadastrar música");
+                        System.out.println("5 - Listar música");
+                        System.out.println("6 - Remover música");
+                        System.out.println("7 - Cadastrar áudioBook");
+                        System.out.println("8 - Listar áudioBook");
+                        System.out.println("9 - Remover áudioBook");
+                        System.out.println("10 - Cadastrar podcast");
+                        System.out.println("11 - Listar podcast");
+                        System.out.println("12 - Remover podcast");
                         System.out.println("0 - Voltar\n");
 
                         opcaoAdm = Console.readInt("Digite uma opção: ");
 
                         switch (opcaoAdm) {
                             case 1:
-                                CadastrarMusica cadastrarMusica = new CadastrarMusica();
-                                cadastrarMusica.compilar();
-                                break;
-                            case 2:
-                                ListarMusicas listarMusicas = new ListarMusicas();
-                                listarMusicas.compilar();
-                                break;
-                            case 3:
-                                RemoverMusica removerMusica = new RemoverMusica();
-                                removerMusica.remover();
-                                break;
-                            case 4:
                                 CadastrarArtista cadastrarArtista = new CadastrarArtista();
                                 cadastrarArtista.compile();
                                 break;
-                            case 5:
+                            case 2:
                                 ListarArtista listarArtistas = new ListarArtista();
                                 listarArtistas.listar();
                                 break;
-                            case 6:
+                            case 3:
                                 RemoverArtista removerArtista = new RemoverArtista();
                                 removerArtista.remover();
+                                break;
+                            case 4:
+                                CadastrarMusica cadastrarMusica = new CadastrarMusica();
+                                cadastrarMusica.compilar();
+                                break;
+                            case 5:
+                                ListarMusicas listarMusicas = new ListarMusicas();
+                                listarMusicas.compilar();
+                                break;
+                            case 6:
+                                RemoverMusica removerMusica = new RemoverMusica();
+                                removerMusica.remover();
+                                break;
+                            case 7:
+                                CadastrarAudioBooks cadastrarAudioBooks = new CadastrarAudioBooks();
+                                cadastrarAudioBooks.compilar();
+                                break;
+                            case 8:
+                                ListarAudioBooks listarAudioBooks = new ListarAudioBooks();
+                                listarAudioBooks.compilar();
+                                break;
+                            case 9:
+                                ExcluirAudioBooks excluirAudioBooks = new ExcluirAudioBooks();
+                                excluirAudioBooks.remover();
+                                break;
+                            case 10:
+                                CadastrarPodcasts cadastrarPodcasts = new CadastrarPodcasts();
+                                cadastrarPodcasts.compilar();
+                                break;
+                            case 11:
+                                ListarPodcasts listarPodcasts = new ListarPodcasts();
+                                listarPodcasts.compilar();
+                                break;
+                            case 12:
+                                ExcluirPodcasts excluirPodcasts = new ExcluirPodcasts();
+                                excluirPodcasts.remover();
                                 break;
                             case 0:
                                 System.out.println("\n -- SAINDO -- \n");
@@ -81,12 +112,9 @@ public class Principal {
                     do {
                         System.out.println("\n -- USER LOGIN -- \n");
                         System.out.println("1 - Cadastrar login");
-                        // System.out.println("2 - Listar login");
                         System.out.println("2 - Criar playlist");
-                        System.out.println("3 - Adicionar músicas à uma playlist");
-                        System.out.println("5 - Listar playlist");
-                        System.out.println("6 - Remover playlist");
-                        System.out.println("7 - Listar todas as playslists");
+                        System.out.println("3 - Listar playlist");
+                        System.out.println("4 - Remover playlist");
                         System.out.println("0 - Voltar\n");
 
                         opcaoUser = Console.readInt("Digite uma opção: ");
@@ -101,19 +129,10 @@ public class Principal {
                                 cadastrarPlaylist.cadastrar();
                                 break;
                             case 3:
-                                ListarAudioBooks listarAudioBooks = new ListarAudioBooks();
-                                listarAudioBooks.listar();
-                                break;
-                            case 4:
-                                ListarPodcasts listarPodcasts = new ListarPodcasts();
-                                listarPodcasts.listar();
-                                break;
-                            case 5:
                                 ListarPlaylist listarPlaylist = new ListarPlaylist();
                                 listarPlaylist.listar();
                                 break;
-
-                            case 6:
+                            case 4:
                                 ExcluirPlaylist excluirPlaylist = new ExcluirPlaylist();
                                 excluirPlaylist.remover();
                                 break;

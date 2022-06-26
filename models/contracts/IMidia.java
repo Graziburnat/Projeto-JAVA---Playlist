@@ -2,7 +2,6 @@ package models.contracts;
 
 import java.util.Date;
 
-// import models.Artista;
 
 public interface IMidia {
 
@@ -13,8 +12,6 @@ public interface IMidia {
     public void setDuracao(Double duracao);
 
     public void setData(Date data);
-
-    // public void setInterprete(Artista interprete);
 
     public void setGenero(String genero);
 }

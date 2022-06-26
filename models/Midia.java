@@ -11,7 +11,6 @@ public class Midia implements IMidia{
         setAutor(autor);
         setDuracao(duracao);
         setData(new Date());
-        // setInterprete(interprete);
         setGenero(genero);
     }
 
@@ -19,7 +18,6 @@ public class Midia implements IMidia{
     private String autor;
     private Double duracao;
     private Date data;
-    // private Artista interprete;
     private String genero;
 
     public String getTitulo() {
@@ -62,13 +60,6 @@ public class Midia implements IMidia{
         this.genero = genero;
     }
 
-    // public Artista getInterprete() {
-    //     return interprete;
-    // }
-
-    // public void setInterprete(Artista interprete) {
-    //     this.interprete = interprete;
-    // }
     @Override
     public String toString() {
         return getTitulo() + " " + getAutor() + " " + getGenero() + " " + getDuracao();
