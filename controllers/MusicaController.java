@@ -1,10 +1,10 @@
 package controllers;
 
 import java.util.ArrayList;
-
+import controllers.contracts.IMusicaController;
 import models.Musica;
 
-public class MusicaController {
+public class MusicaController implements IMusicaController{
 
     private static ArrayList<Musica> musicas = new ArrayList<Musica>();
 
@@ -12,10 +12,7 @@ public class MusicaController {
         musicas.add(musica);
     }
 
-    public ArrayList<Musica> listar() {
-        return musicas;
-    }
-
+    
     public Musica buscarPorNome(String nome) {
         for (Musica musicaCadastrada : musicas) {
             if (musicaCadastrada.getTitulo().equals(nome)) {
@@ -34,5 +31,9 @@ public class MusicaController {
             }
         }
         return null;
+    }
+
+    public ArrayList<Musica> listar() {
+        return musicas;
     }
 }

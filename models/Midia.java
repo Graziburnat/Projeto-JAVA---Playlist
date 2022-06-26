@@ -6,12 +6,12 @@ import models.contracts.IMidia;
 
 public class Midia implements IMidia{
 
-    public Midia(String titulo, String autor, Double duracao, Date data, Artista interprete, Artista genero) {
+    public Midia(String titulo, String autor, Double duracao, String genero) {
         setTitulo(titulo);
         setAutor(autor);
         setDuracao(duracao);
         setData(new Date());
-        setInterprete(interprete);
+        // setInterprete(interprete);
         setGenero(genero);
     }
 
@@ -19,8 +19,8 @@ public class Midia implements IMidia{
     private String autor;
     private Double duracao;
     private Date data;
-    private Artista interprete;
-    private Artista genero;
+    // private Artista interprete;
+    private String genero;
 
     public String getTitulo() {
         return titulo;
@@ -54,19 +54,23 @@ public class Midia implements IMidia{
         this.data = data;
     }
 
-    public Artista getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(Artista genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public Artista getInterprete() {
-        return interprete;
-    }
+    // public Artista getInterprete() {
+    //     return interprete;
+    // }
 
-    public void setInterprete(Artista interprete) {
-        this.interprete = interprete;
+    // public void setInterprete(Artista interprete) {
+    //     this.interprete = interprete;
+    // }
+    @Override
+    public String toString() {
+        return getTitulo() + " " + getAutor() + " " + getGenero() + " " + getDuracao();
     }
 }

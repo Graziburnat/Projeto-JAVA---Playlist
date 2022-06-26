@@ -1,10 +1,25 @@
 package models;
-import java.util.Date;
 
 public class Musica  extends Midia{
     
-    public Musica (String titulo, String autor, Double duracao, Date data, Artista interprete, Artista genero){
-        super(titulo, autor, duracao, data, interprete, genero);
+    private Artista interprete;
+    
+    public Artista getInterprete() {
+        return interprete;
+    }
+
+    public void setInterprete(Artista interprete) {
+        this.interprete = interprete;
+    }
+
+    public Musica (String titulo, String autor, Double duracao, Artista interprete, String genero){
+        super(titulo, autor, duracao, genero);
+        setInterprete(interprete);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ " " + getInterprete();
     }
     
 }

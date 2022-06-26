@@ -1,11 +1,9 @@
 package models;
 
-import java.util.Date;
-
 public class AudioBook extends Midia{
 
-    public AudioBook(String titulo, String autor, Double duracao, Date data, Artista interprete, Artista genero){
-        super(titulo, autor, duracao, data, interprete, genero);
+    public AudioBook(String titulo, String autor, Double duracao, String interprete, String genero){
+        super(titulo, autor, duracao, genero);
     }
 
 }

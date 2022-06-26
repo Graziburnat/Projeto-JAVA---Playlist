@@ -8,7 +8,7 @@ public class ListarAudioBooks {
     public void listar(){
         AudioBookController audioBookController = new AudioBookController();
 
-        AudioBook audioBook = new AudioBook(null, null, null, null, null, null);
+        AudioBook audioBook = new AudioBook(null, null, null, null, null);
 
         audioBook.setTitulo("TituloRandom1");
         audioBook.setAutor("AutorRandom1");

@@ -8,7 +8,7 @@ public class ListarPodcasts {
     public void listar(){
         PodcastController podcastController = new PodcastController();
 
-        Podcast podcast = new Podcast(null, null, null, null, null, null);
+        Podcast podcast = new Podcast(null, null, null, null);
         
         podcast.setTitulo("TituloRandom1");
         podcast.setAutor("AutorRandom1");
@@ -18,7 +18,8 @@ public class ListarPodcasts {
 
         System.out.println("-- LISTA DE PODCASTS --");
         for(Podcast podcastCadastrado : podcastController.listar()){
-            System.out.println(podcastCadastrado);
+            System.out.println(podcastCadastrado.getTitulo());
+            System.out.println(podcastCadastrado.getAutor());
         }
     }
     

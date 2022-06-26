@@ -6,6 +6,9 @@ import models.contracts.IPlaylist;
 
 public class Playlist implements IPlaylist {
 
+	//na verdade nao é necessario uma classe itemmusica por duplicação de funcionalidades/agrupamento de itens
+	//pois nao recebe novos parametros
+	
 	public Playlist() {
 		musicas = new ArrayList<ItemMusica>();
 		login = new Login();
