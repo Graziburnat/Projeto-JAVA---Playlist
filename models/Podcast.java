@@ -4,6 +4,8 @@ public class Podcast extends Midia {
 
     public Podcast(String titulo, String autor, Double duracao, String genero, String convidado, String patrocinador) {
         super(titulo, autor, duracao, genero);
+        setConvidado(convidado);
+        setPatrocinador(patrocinador);
     }
 
     private String convidado;
@@ -27,7 +29,7 @@ public class Podcast extends Midia {
 
     @Override
     public String toString() {
-        return super.toString()+ " " + getConvidado() + " " + getPatrocinador();
+        return super.toString()+ "|| Convidado: " + getConvidado() + "|| Patrocinador: " + getPatrocinador() + "|| Data de criação: " + super.getData();
     }
 
 }

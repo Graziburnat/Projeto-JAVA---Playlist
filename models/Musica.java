@@ -19,7 +19,7 @@ public class Musica  extends Midia{
 
     @Override
     public String toString() {
-        return super.toString()+ " " + getInterprete();
+        return super.toString()+ "|| Intérprete: " + getInterprete() + "|| Data de criação: " + super.getData();
     }
     
 }

@@ -62,6 +62,6 @@ public class Midia implements IMidia{
 
     @Override
     public String toString() {
-        return getTitulo() + " " + getAutor() + " " + getGenero() + " " + getDuracao();
+        return "Título: " + getTitulo() + "|| Autor:" + getAutor() + "|| Gênero: " + getGenero() + "|| Duração: " + getDuracao();
     }
 }

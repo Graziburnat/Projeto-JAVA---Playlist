@@ -2,9 +2,10 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.contracts.IAudioBookController;
 import models.AudioBook;
 
-public class AudioBookController {
+public class AudioBookController implements IAudioBookController {
 
     private static ArrayList<AudioBook> aBooks = new ArrayList<AudioBook>();
 

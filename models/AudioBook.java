@@ -4,6 +4,8 @@ public class AudioBook extends Midia{
 
     public AudioBook(String titulo, String autor, Double duracao, String genero, String narrador, String editora){
         super(titulo, autor, duracao, genero);
+        setNarrador(narrador);
+        setEditora(editora);
     }
 
     private String narrador;
@@ -24,7 +26,7 @@ public class AudioBook extends Midia{
 
     @Override
     public String toString() {
-        return super.toString()+ " " + getNarrador() + " " + getEditora();
+        return super.toString()+ "|| Narrador: " + getNarrador() + "|| Editora: " + getEditora() + "|| Data de criação: " + super.getData();
     }
 
 }

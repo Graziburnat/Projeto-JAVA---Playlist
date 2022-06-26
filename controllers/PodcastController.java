@@ -2,9 +2,10 @@ package controllers;
 
 import java.util.ArrayList;
 
+import controllers.contracts.IPodcastController;
 import models.Podcast;
 
-public class PodcastController {
+public class PodcastController implements IPodcastController{
 
     private static ArrayList<Podcast> podcasts = new ArrayList<Podcast>();
 
