@@ -1,10 +1,11 @@
 package controllers;
+
 import java.util.ArrayList;
 
 import controllers.contracts.ILoginController;
 import models.Login;
 
-public class LoginController implements ILoginController{
+public class LoginController implements ILoginController {
 
     private static ArrayList<Login> logins = new ArrayList<Login>();
 
@@ -16,18 +17,18 @@ public class LoginController implements ILoginController{
         return logins;
     }
 
-    public Login buscar(String usuario){
+    public Login buscar(String usuario) {
         for (Login loginCadastrado : logins) {
-            if(loginCadastrado.getUsuario().equals(usuario)){
+            if (loginCadastrado.getUsuario().equals(usuario)) {
                 return loginCadastrado;
             }
         }
         return null;
     }
 
-    public Login excluirLogin(String usuario){
+    public Login excluirLogin(String usuario) {
         for (Login loginCadastrado : logins) {
-            if(loginCadastrado.getUsuario().equals(usuario)){
+            if (loginCadastrado.getUsuario().equals(usuario)) {
                 logins.remove(loginCadastrado);
                 return loginCadastrado;
             }

@@ -8,12 +8,11 @@ import views.viewLogin.CriarLogin;
 import views.viewMusicas.CadastrarMusica;
 import views.viewMusicas.ListarMusicas;
 import views.viewMusicas.RemoverMusica;
+import views.viewPA.ListarAudioBooks;
+import views.viewPA.ListarPodcasts;
 import views.viewPlaylist.CadastrarPlaylist;
 import views.viewPlaylist.ExcluirPlaylist;
 import views.viewPlaylist.ListarPlaylist;
-import views.viewVersao.CadastrarVersao;
-import views.viewVersao.ListarVersao;
-import views.viewVersao.RemoverVersao;
 
 public class Principal {
     public static void main(String[] args) {
@@ -68,18 +67,6 @@ public class Principal {
                                 RemoverArtista removerArtista = new RemoverArtista();
                                 removerArtista.remover();
                                 break;
-                            case 7:
-                                CadastrarVersao cadastrarVersao = new CadastrarVersao();
-                                cadastrarVersao.cadastrar();
-                                break;
-                            case 8:
-                                ListarVersao listarVersao = new ListarVersao();
-                                listarVersao.listar();
-                                break;
-                            case 9:
-                                RemoverVersao removerVersao = new RemoverVersao();
-                                removerVersao.remover();
-                                break;
                             case 0:
                                 System.out.println("\n -- SAINDO -- \n");
                                 break;
@@ -109,20 +96,17 @@ public class Principal {
                                 CriarLogin criarLogin = new CriarLogin();
                                 criarLogin.compilar();
                                 break;
-
-                            // case 2:
-                            // ListarUsuario listarUsuario = new ListarUsuario();
-                            // listarUsuario.listar();
-                            // break;
-
-                            // case 3:
-                            // ExcluirLogin excluirLogin= new ExcluirLogin();
-                            // excluirLogin.excluirLogin();
-                            // break;
-
                             case 2:
                                 CadastrarPlaylist cadastrarPlaylist = new CadastrarPlaylist();
                                 cadastrarPlaylist.cadastrar();
+                                break;
+                            case 3:
+                                ListarAudioBooks listarAudioBooks = new ListarAudioBooks();
+                                listarAudioBooks.listar();
+                                break;
+                            case 4:
+                                ListarPodcasts listarPodcasts = new ListarPodcasts();
+                                listarPodcasts.listar();
                                 break;
                             case 5:
                                 ListarPlaylist listarPlaylist = new ListarPlaylist();

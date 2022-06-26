@@ -1,10 +1,10 @@
 package controllers;
+
 import java.util.ArrayList;
 
-import controllers.contracts.IMusicaController;
 import models.Musica;
 
-public class MusicaController implements IMusicaController{
+public class MusicaController {
 
     private static ArrayList<Musica> musicas = new ArrayList<Musica>();
 
@@ -16,19 +16,19 @@ public class MusicaController implements IMusicaController{
         return musicas;
     }
 
-    public Musica buscarPorNome(String nome){
+    public Musica buscarPorNome(String nome) {
         for (Musica musicaCadastrada : musicas) {
-            if(musicaCadastrada.getNome().equals(nome)){
+            if (musicaCadastrada.getTitulo().equals(nome)) {
                 return musicaCadastrada;
             }
         }
         return null;
     }
 
-    public Musica remover(String nome){
-       
+    public Musica remover(String nome) {
+
         for (Musica musicaCadastrada : musicas) {
-            if(musicaCadastrada.getNome().equals(nome)){
+            if (musicaCadastrada.getTitulo().equals(nome)) {
                 musicas.remove(musicaCadastrada);
                 return musicaCadastrada;
             }

@@ -1,12 +1,12 @@
 package views.viewPlaylist;
 
 import models.Playlist;
-import models.ItemPlay;
+import models.ItemMusica;
 import models.Login;
-import models.Versao;
+import models.Musica;
 import controllers.PlaylistController;
-import controllers.VersaoController;
 import controllers.LoginController;
+import controllers.MusicaController;
 import utils.Console;
 
 public class CadastrarPlaylist {
@@ -14,8 +14,8 @@ public class CadastrarPlaylist {
     public void cadastrar() {
 
         Playlist playlist = new Playlist();
-        ItemPlay mp = new ItemPlay();
-        VersaoController versaoController = new VersaoController();
+        ItemMusica mp = new ItemMusica();
+        MusicaController musicaController = new MusicaController();
         PlaylistController playlistController = new PlaylistController();
         LoginController loginController = new LoginController();
 
@@ -30,12 +30,12 @@ public class CadastrarPlaylist {
 
             do {
 
-                mp = new ItemPlay();
+                mp = new ItemMusica();
                 String nomeVersao = Console.readString("Digite a música que deseja adicionar: ");
-                Versao versao = versaoController.buscar(nomeVersao);
-                if (versao != null) {
-                    mp.setVersao(versao);
-                    playlist.getVersoes().add(mp);
+                Musica musica = musicaController.buscarPorNome(nomeVersao);
+                if (musica != null) {
+                    mp.setMusica(musica);
+                    playlist.getMusicas().add(mp);
                 } else {
                     System.out.println("Música não encontrada");
                 }
