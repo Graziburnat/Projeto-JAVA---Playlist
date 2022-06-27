@@ -7,6 +7,12 @@ import views.viewArtista.RemoverArtista;
 import views.viewAudioBooks.CadastrarAudioBooks;
 import views.viewAudioBooks.ExcluirAudioBooks;
 import views.viewAudioBooks.ListarAudioBooks;
+import views.viewFavoritoAudioBooks.CadastrarFavoritoAudioBooks;
+import views.viewFavoritoAudioBooks.ExcluirFavoritoAudioBook;
+import views.viewFavoritoAudioBooks.ListarFavoritoAudioBook;
+import views.viewFavoritoPodcasts.CadastrarFavoritoPodcast;
+import views.viewFavoritoPodcasts.ExcluirFavoritoPodcast;
+import views.viewFavoritoPodcasts.ListarFavoritoPodcast;
 import views.viewLogin.CriarLogin;
 import views.viewMusicas.CadastrarMusica;
 import views.viewMusicas.ListarMusicas;
@@ -45,6 +51,12 @@ public class Principal {
                         System.out.println("10 - Cadastrar podcast");
                         System.out.println("11 - Listar podcast");
                         System.out.println("12 - Remover podcast");
+                        System.out.println("13 - Cadastrar podcasts favoritos");
+                        System.out.println("14 - Listar podcast favoritos");
+                        System.out.println("15 - Remover podcast favoritos");
+                        System.out.println("16 - Cadastrar audioBook favoritos");
+                        System.out.println("17 - Listar audioBook favoritos");
+                        System.out.println("18 - Remover audioBook favoritos");
                         System.out.println("0 - Voltar\n");
 
                         opcaoAdm = Console.readInt("Digite uma opção: ");
@@ -97,6 +109,30 @@ public class Principal {
                             case 12:
                                 ExcluirPodcasts excluirPodcasts = new ExcluirPodcasts();
                                 excluirPodcasts.remover();
+                                break;
+                            case 13:
+                                CadastrarFavoritoPodcast cadastrarFavoritoPodcast = new CadastrarFavoritoPodcast();
+                                cadastrarFavoritoPodcast.cadastrar();
+                                break;
+                            case 14:
+                                ListarFavoritoPodcast listarFavoritoPodcast = new ListarFavoritoPodcast();
+                                listarFavoritoPodcast.listar();
+                                break;
+                            case 15:
+                                ExcluirFavoritoPodcast excluirFavoritoPodcast = new ExcluirFavoritoPodcast();
+                                excluirFavoritoPodcast.remover();
+                                break;
+                            case 16:
+                                CadastrarFavoritoAudioBooks cadastrarFavoritoAudioBooks = new CadastrarFavoritoAudioBooks();
+                                cadastrarFavoritoAudioBooks.cadastrar();
+                                break;
+                            case 17:
+                                ListarFavoritoAudioBook listarFavoritoAudioBook = new ListarFavoritoAudioBook();
+                                listarFavoritoAudioBook.listar();
+                                break;
+                            case 18:
+                                ExcluirFavoritoAudioBook excluirFavoritoAudioBook = new ExcluirFavoritoAudioBook();
+                                excluirFavoritoAudioBook.remover();
                                 break;
                             case 0:
                                 System.out.println("\n -- SAINDO -- \n");
